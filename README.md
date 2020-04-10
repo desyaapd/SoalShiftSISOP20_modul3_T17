@@ -10,5 +10,15 @@ Nama Anggota Kelompok T17 :
   A. Matriks pertama berordo __4 x 2__ <br>
   B. Matriks kedua berordo __2 x 5__ <br>
   C. Kedua matriks tersebut berisi angka 1 - 20 <br>
-  #### Code :
+  #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/Revisi_Soal4.c
   #### Penyelesaian :
+  Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
+  ```bash
+  #include <stdio.h>
+  #include <pthread.h>
+  #include <sys/ipc.h>
+  #include <sys/shm.h>
+  #include <stdlib.h>
+  #include <unistd.h>
+  #include <string.h>
+  ```
