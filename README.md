@@ -55,4 +55,14 @@ Nama Anggota Kelompok T17 :
     ```
     Pada ```struct args *index = (struct args *)malloc(sizeof(struct args));```ini akan membuat _object_ dari ```struct args``` bernama __index__ dan sekaligus melakukan pengalokasian memori sebesar _size_ dari ```struct args```. <br>
     Setelah pengalokasian memori, ```index->i = i;``` akan mengatur nilai i pada _object_ dari ```struct args``` bernama __index__ dengan __nilai i__. Hal ini juga dilakukan pada nilai j, ``` index->j = j;``` yang akan mengatur nilai j pada _object_ dari ```struct args``` bernama __index__ dengan __nilai j__. <br>
-    Kemudian, ```pthread_create(&tid[i][j], NULL, &kali, (void *)index);``` membuat thread pada array dari thread bernama __tid__ pada __nilai i__ dan __nilai j__ dengan memanggil fungsi __kali__ dengan parameter __index__. <br>  }
+    Kemudian, ```pthread_create(&tid[i][j], NULL, &kali, (void *)index);``` membuat thread pada array dari thread bernama __tid__ pada __nilai i__ dan __nilai j__ dengan memanggil fungsi __kali__ dengan parameter __index__. <br>  
+  * Dilanjutkan dengan menggabungkan semua thread yang ada 
+    ```bash
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 5; j++) {
+        pthread_join(tid[i][j], NULL);
+      }
+    }
+    ```
+
+    
