@@ -96,4 +96,28 @@ Nama Anggota Kelompok T17 :
     #include<string.h>
     #include<sys/wait.h>
     ```
-  * 
+  * Dikarenakan adanya ketentuan untuk menggunakan __IPC Pipes__, maka kita perlu mendeklarasikan pipes tersebut 
+    ```bash
+    int main() {
+    int fd[2];
+    ```
+    ```fd``` merupakan _file descriptor_, lalu _file descriptor_ harus berjumlah 2 karena pipes hanya memiliki 2 ujung yakni __ujung 0__ untuk fungsi _read_ dan __ujung 1__ untuk fungsi _write_.
+  * Lalu, pada code di bawah ini :
+    ```bash
+     pid = fork();
+     if (pid == 0) {
+        dup2(fd[1], 1);
+        close(fd[0]);
+        char *argv[] = {"ls", NULL};
+        execv("/bin/ls", argv);
+      }
+      while(wait(NULL) > 0);
+
+      dup2(fd[0], 0);
+      close(fd[1]);
+      char *argv[] = {"wc", "-l", NULL};
+      execv("/usr/bin/wc", argv);
+
+      }
+      ```
+  
