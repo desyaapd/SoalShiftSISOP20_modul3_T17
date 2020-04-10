@@ -64,5 +64,13 @@ Nama Anggota Kelompok T17 :
       }
     }
     ```
-
+  * Hasil perkalian kedua buah matriks dalam matriks C akan ditampilkan pada layar
+    ```bash
+    printf("Matriks :\n");
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 5; j++) {
+        printf("%4d", matC[i][j]);
+      }
+    printf("\n");
+    }
     
