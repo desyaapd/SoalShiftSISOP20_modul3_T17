@@ -10,4 +10,5 @@ Nama Anggota Kelompok T17 :
   A. Matriks pertama berordo __4 x 2__ <br>
   B. Matriks kedua berordo __2 x 5__ <br>
   C. Kedua matriks tersebut berisi angka 1 - 20 <br>
-  #### Code 
+  #### Code :
+  #### Penyelesaian :
