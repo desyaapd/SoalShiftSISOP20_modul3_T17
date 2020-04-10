@@ -78,4 +78,7 @@ Nama Anggota Kelompok T17 :
     ```bash
     int shmid = shmget(key, sizeof(matC), IPC_CREAT | 0666);
     ```
-  * 
+  * Shared Memory berhasil dialokasikan, tetapi belum menjadi bagian dari _Address Space_. Oleh karena itu, kita gunakan ```shmat``` untuk menjadikan Shared Memory tersebut bagian dari _Address Space_. 
+    ```bash
+    value = shmat(shmid, NULL, 0);
+    ```
