@@ -73,4 +73,9 @@ Nama Anggota Kelompok T17 :
       }
     printf("\n");
     }
-    
+  * Membuat Shared Memory ID sesuai dengan key yang telah ditentukan ```key_t key = 1337;``` yakni ```1337```.
+  * _Code_ berikut akan membuat Shared Memory ```shmid``` dengan _size_ dari matriks C ```sizeof(matC)``` dengan ```key``` _private key_ (kunci pribadi) dan pada Shared Memory ini mengizinkan adanya ```0666``` _read and write_. 
+    ```bash
+    int shmid = shmget(key, sizeof(matC), IPC_CREAT | 0666);
+    ```
+  * 
