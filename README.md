@@ -23,11 +23,11 @@ Nama Anggota Kelompok T17 :
     #include <string.h>
     ```
   * Inisialisasi kedua matriks yang berisi angka 1 - 20 dengan ordo yang telah ditentukan yakni matriks pertama berordo __4 x 2__ ```int matA[4][2] = {{1, 1}, {2, 2},{1, 1},{2, 2}};``` dan matriks kedua berordo __2 x 5__ ```int matB[2][5] = {{1, 4, 1, 2, 1},{1, 2, 1, 4, 1}};``` serta ```int matC[4][5];``` yang akan menampung matriks hasil perkalian kedua matriks tersebut.
-  ```bash
-  int matA[4][2] = {{1, 1}, {2, 2},{1, 1},{2, 2}};
-  int matB[2][5] = {{1, 4, 1, 2, 1},{1, 2, 1, 4, 1}};
-  int matC[4][5];
-  ```
+    ```bash
+    int matA[4][2] = {{1, 1}, {2, 2},{1, 1},{2, 2}};
+    int matB[2][5] = {{1, 4, 1, 2, 1},{1, 2, 1, 4, 1}};
+    int matC[4][5];
+    ```
   * Setelah inisialisasi matriks selesai, kita berikan struct yang berguna untuk _passing_ data ke dalam thread
     ```bash
     struct args {
