@@ -43,3 +43,16 @@ Nama Anggota Kelompok T17 :
      int j = ((struct args*)arg)->j;
      ```
   * Dalam fungsi ```main``` terdapat ``` pthread_t tid[4][5];``` yang menunjukkan array dari thread bernama __tid__ yakni dengan _size_ __4 x 5__.
+  * Banyak fungsi yang terdapat dalam ```main```, untuk _code_ berikut ini :
+    ```bash
+    for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 5; j++) {
+      struct args *index = (struct args *)malloc(sizeof(struct args));
+      index->i = i;
+      index->j = j;
+      pthread_create(&tid[i][j], NULL, &kali, (void *)index);
+    }
+    ```
+    Pada ```struct args *index = (struct args *)malloc(sizeof(struct args));```ini akan membuat _object_ dari ```struct args``` bernama __index__ dan sekaligus melakukan pengalokasian memori sebesar _size_ dari ```struct args```. <br>
+    Setelah pengalokasian memori, ```index->i = i;``` akan mengatur nilai i pada _object_ dari ```struct args``` bernama __index__ dengan __nilai i__. Hal ini juga dilakukan pada nilai j, ``` index->j = j;``` yang akan mengatur nilai j pada _object_ dari ```struct args``` bernama __index__ dengan __nilai j__. <br>
+  }
