@@ -5,4 +5,7 @@ Nama Anggota Kelompok T17 :
 
 ## Soal Shift Modul 3 dan Penyelesaian Soal Shift Modul 3
 ### Soal 4
-Buatlah program C yang berisi program untuk melakukan perkalian matriks pertama berordo 4x2 dengan matriks kedua berordo 2x5 dengan ketentuan bahwa kedua matriks tersebut berisi angka 1 - 20.
+Buatlah program C yang berisi program untuk melakukan perkalian dua buah matriks dengan ketentuan berikut ini : <br>
+A. Matriks pertama berordo __4 x 2__ 
+B. Matriks kedua berordo __2 x 5__ 
+C. Kedua matriks tersebut berisi angka 1 - 20
