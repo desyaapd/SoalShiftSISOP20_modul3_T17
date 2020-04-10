@@ -13,12 +13,12 @@ Nama Anggota Kelompok T17 :
   #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/Revisi_Soal4.c
   #### Penyelesaian :
   * Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
-  ```bash
-  #include <stdio.h>
-  #include <pthread.h>
-  #include <sys/ipc.h>
-  #include <sys/shm.h>
-  #include <stdlib.h>
-  #include <unistd.h>
-  #include <string.h>
-  ```
+    ```bash
+    #include <stdio.h>
+    #include <pthread.h>
+    #include <sys/ipc.h>
+    #include <sys/shm.h>
+    #include <stdlib.h>
+    #include <unistd.h>
+    #include <string.h>
+    ```
