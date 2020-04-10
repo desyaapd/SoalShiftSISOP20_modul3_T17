@@ -37,10 +37,10 @@ Nama Anggota Kelompok T17 :
     ```
     Variabel ```i``` untuk menunjukkan baris, sedangkan variabel ```j``` untuk menunjukkan kolom.
   * Struct yang telah kita buat di atas akan kita passing ke dalam ```void *``` dan kemudian akan dilanjutkan untuk dimasukkan ke dalam fungsi
-  ```bash 
-  void *kali(void* arg) {
-  int i = ((struct args*)arg)->i;
-  int j = ((struct args*)arg)->j;
-  ```
+     ```bash 
+     void *kali(void* arg) {
+     int i = ((struct args*)arg)->i;
+     int j = ((struct args*)arg)->j;
+     ```
 
 
