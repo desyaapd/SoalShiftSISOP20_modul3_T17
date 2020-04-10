@@ -10,7 +10,7 @@ Nama Anggota Kelompok T17 :
   A. Matriks pertama berordo __4 x 2__ <br>
   B. Matriks kedua berordo __2 x 5__ <br>
   C. Kedua matriks tersebut berisi angka 1 - 20 <br>
-  #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/Revisi_Soal4.c
+  #### Code : 
   #### Penyelesaian :
   * Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
     ```bash
@@ -42,5 +42,4 @@ Nama Anggota Kelompok T17 :
      int i = ((struct args*)arg)->i;
      int j = ((struct args*)arg)->j;
      ```
-
-
+  * Dalam fungsi ```main``` terdapat ``` pthread_t tid[4][5];``` yang menunjukkan array dari thread bernama __tid__ yakni dengan _size_ __4 x 5__.
