@@ -12,7 +12,7 @@ Nama Anggota Kelompok T17 :
   C. Kedua matriks tersebut berisi angka 1 - 20 <br>
   #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/Revisi_Soal4.c
   #### Penyelesaian :
-  Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
+  * Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
   ```bash
   #include <stdio.h>
   #include <pthread.h>
