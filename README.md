@@ -82,3 +82,18 @@ Nama Anggota Kelompok T17 :
     ```bash
     value = shmat(shmid, NULL, 0);
     ```
+* #### Soal 4c
+  Buatlah program C yang akan mengetahui jumlah file yang berada pada suatu folder di direktori saat kita menjalankan program ini dengan menggunakan ```ls | wc -1``` dimana program ini tidak berhubungan dengan program yang diminta pada soal 4A dan 4B di atas. Program ini memiliki satu ketentuan yakni : <br>
+  A. Harus menggunakan __IPC Pipes__
+  #### Code :
+  #### Penyelesaian :
+  * Untuk mendukung jalannya program ini, kita tidak lupa untuk menggunakan _Library_ di antaranya sebagai berikut :
+    ```bash
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<unistd.h>
+    #include<sys/types.h>
+    #include<string.h>
+    #include<sys/wait.h>
+    ```
+  * 
