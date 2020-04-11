@@ -164,6 +164,8 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       pthread_join(tid[i], NULL);
     }
     ```
+#### Output :
+![modul3-soal3](https://user-images.githubusercontent.com/49342639/79041530-ce476200-7c1a-11ea-9cdb-3b492434e797.jpg)
     
 ### Soal 4
 * #### Soal 4A
