@@ -9,7 +9,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
 ```-f``` untuk kategorisasi file yang telah ditentukan 
 ```-d``` untuk kategorisasi di folder yang telah ditentukan
 ```\*``` untuk kategorisasi di folder dimana program tersebut berada
-  #### Code :
+  #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/soal3.c
   #### Penyelesaian :
   * Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
     ```bash
