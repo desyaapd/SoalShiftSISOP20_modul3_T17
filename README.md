@@ -250,6 +250,8 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
   ![modul3-4a](https://user-images.githubusercontent.com/49342639/79041683-d2c04a80-7c1b-11ea-866c-bd3a02a030be.jpg)
   
 * #### Soal 4B
+  Buatlah program C untuk mengetahui hasil faktorial dari matriks hasil perkalian yang telah didapatkan pada program soal 4A di atas. Program ini memiliki ketentuan yakni :
+  A. Harus menggunakan thread dalam penghitungan factorialnya
   #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/FIX-soal4/4b.c
   #### Penyelesaian :
   * Untuk mendukung jalannya program ini, pasti kita menggunaka _Library_ berikut ini :
