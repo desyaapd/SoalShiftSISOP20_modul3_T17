@@ -375,4 +375,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       Kemudian, input pada 0 diganti dengan iput dari pipes ```dup2(fd[0], 0);```. Dan tidak lupa juga untuk menutup kedua _file descriptor_ yaitu pada _read(0)_ ```close(fd[0]);``` dan _write(1)_```close(fd[1]);```. Selanjutnya, melakukan fungsi ```execv("/usr/bin/wc", argv);```.
   #### Output :  
   ![modul3-4c](https://user-images.githubusercontent.com/49342639/79041605-4a41aa00-7c1b-11ea-9403-6f5fc56483c2.jpg)
+
+### Kendala :
+* Ehem, ini soal susah banget YaAllah mas:( Mas, ini udah kuliahnya daring loh permudah sedikit lah mas. Thank youuuu
      
