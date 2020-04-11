@@ -44,7 +44,15 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
           token = strtok(NULL, "/");
         }
      ```
-   *
+  * Jika ekstensi dari file tersebut telah didapatkan, maka ekstensi tersebut akan ditampilkan ke dalam ```buffer```.
+  * Namun, jika terdapat sebuah file yang tidak memiliki ekstensi ```count <= 1``` maka ```buffer``` akan berisi __unknown__. Pengecekan terhadap file yang tidak memiliki ekstensi dilakukan oleh code berikut ini :
+    ```bash
+     if (count <= 1) {
+        strcpy(buff, "unknown");
+     }
+
+     return buff;
+     ```  
 
 ### Soal 4
 * #### Soal 4A
