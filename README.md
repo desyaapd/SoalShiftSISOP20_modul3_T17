@@ -87,7 +87,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       }
     ```
     Code di atas akan menampilkan __"Argumen Kurang"__ apabila argumen yang diberikan tidaklah berjumlah dua argumen. Dalam program ini, _user_ diminta untuk menginputkan dua argumen yakni ```argc``` dan ```argv```.
-  * Selain itu, apabila argumen yang diinputkan oleh _user_ tidak sesuai dengan ketentuan argumen yang diminta oleh soal maka program akan menampilkan bahwa __"Argumen tidak ada"__ atau __"Argumen salah"__.
+  * Selain itu, apabila argumen yang diinputkan oleh _user_ tidak sesuai dengan ketentuan argumen yang diminta oleh soal maka program akan menampilkan bahwa __"Argumen tidak ada"__ atau __"Argumen salah"__. Code berikut untuk argumen ```-f``` dan argumen ```*```:
     ```bash
     if (strcmp(argv[1], "-f") != 0 && strcmp(argv[1], "*") != 0 && strcmp(argv[1], "-d")) {
       printf("Argument tidak ada\n");
@@ -99,8 +99,25 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
         printf("Argument salah\n");
         exit(1);
     }
+    pthread_t tid[argc-2];
+    for (int i = 2; i < argc; i++) {
+      pthread_create(&tid[i-2], NULL, &routine, (void *)argv[i]);
+    }
+    for (int i = 2; i < argc; i++) {
+      pthread_join(tid[i-2], NULL);
+    }
+    exit(0);
+    }
+
+    char *directory;
+    if (strcmp(argv[1], "*") == 0) {
+      if (argc != 2) {
+        printf("Argument salah\n");
+        exit(1);
+      }
     ```
-    
+    Dalam code di atas juga dilakukan pembuatan __thread__.
+  * 
     
 ### Soal 4
 * #### Soal 4A
