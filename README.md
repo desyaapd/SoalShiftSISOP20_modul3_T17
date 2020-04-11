@@ -24,6 +24,28 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     #include <pthread.h>
     #include <errno.h>
     ```
+  * Kemudian, dibuatlah sebuah code untuk mendapatkan nama dari file tersebut
+    ```bash
+    char *getFileName(char *fName, char buff[]) {
+        char *token = strtok(fName, "/");
+        while (token != NULL) {
+          sprintf(buff, "%s", token);
+          token = strtok(NULL, "/");
+        }
+    }
+    ```
+  * Selain nama dari setiap file didapatkan, ekstensi dari file tersebut juga harus didapatkan sebagai kunci untuk melakukan kategorisasi
+    ```bash
+    char *getExtension(char *fName, char buff[]) {
+        char buffFileName[1337];
+        char *token = strtok(fName, "/");
+        while (token != NULL) {
+          sprintf(buffFileName, "%s", token);
+          token = strtok(NULL, "/");
+        }
+     ```
+   *
+
 ### Soal 4
 * #### Soal 4A
   Buatlah program C yang berisi program untuk melakukan perkalian dua buah matriks dengan ketentuan berikut ini : <br>
