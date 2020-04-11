@@ -4,6 +4,26 @@ Nama Anggota Kelompok T17 :
   2. Rindi Kartika Sari [05311840000013]
 
 ## Soal Shift Modul 3 dan Penyelesaian Soal Shift Modul 3
+### Soal 3
+Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan file ke dalam folder yang sesuai dengan ekstensinya yang folder hasilnya terdapat di _working directory_ ketika program tersebut dijalankan. Program ini memiliki ketentuan untuk beberapa opsi yang tersedia yakni :
+```-f``` untuk kategorisasi file yang telah ditentukan 
+```-d``` untuk kategorisasi di folder yang telah ditentukan
+```\*``` untuk kategorisasi di folder dimana program tersebut berada
+  #### Code :
+  #### Penyelesaian :
+  * Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
+    ```bash
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <unistd.h>
+    #include <string.h>
+    #include <ctype.h>
+    #include <dirent.h>
+    #include <pthread.h>
+    #include <errno.h>
+    ```
 ### Soal 4
 * #### Soal 4A
   Buatlah program C yang berisi program untuk melakukan perkalian dua buah matriks dengan ketentuan berikut ini : <br>
