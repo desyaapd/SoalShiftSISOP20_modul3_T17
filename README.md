@@ -77,6 +77,30 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     }
     closedir(dir);
     ```
+  * Pemanggilan terhadap fungsi ```getFileName( )``` yang mendapatkan nama file dengan nama file yang tersimpan dalam ```buffer``` kemudian ke ```buffFileName```. Selain itu, juga dilakukan pemanggilan terhadap fungsi ```getExtension( )``` untuk mengambil setiap __ext__ yang berada di ```buffFrom```.
+  * Dalam fungsi ```main``` terdapat beberapa fungsi untuk melakukan pengecekan untuk setiap argumen yang diinputkan. 
+    ```bash 
+    int main(int argc, char *argv[]) {
+      if (argc == 1) {
+        printf("Argument kurang\n");
+        exit(1);
+      }
+    ```
+    Code di atas akan menampilkan __"Argumen Kurang"__ apabila argumen yang diberikan tidaklah berjumlah dua argumen. Dalam program ini, _user_ diminta untuk menginputkan dua argumen yakni ```argc``` dan ```argv```.
+  * Selain itu, apabila argumen yang diinputkan oleh _user_ tidak sesuai dengan ketentuan argumen yang diminta oleh soal maka program akan menampilkan bahwa __"Argumen tidak ada"__ atau __"Argumen salah"__.
+    ```bash
+    if (strcmp(argv[1], "-f") != 0 && strcmp(argv[1], "*") != 0 && strcmp(argv[1], "-d")) {
+      printf("Argument tidak ada\n");
+      exit(1);
+    }
+
+    if (strcmp(argv[1], "-f") == 0) {
+      if (argc <= 2) {
+        printf("Argument salah\n");
+        exit(1);
+    }
+    ```
+    
     
 ### Soal 4
 * #### Soal 4A
