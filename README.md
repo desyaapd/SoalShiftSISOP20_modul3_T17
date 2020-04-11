@@ -117,7 +117,24 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       }
     ```
     Dalam code di atas juga dilakukan pembuatan __thread__.
-  * 
+  * Untuk code berikut ini untuk argumen ```-d``` :
+    ```bash
+    if (strcmp(argv[1], "-d") == 0) {
+      if (argc != 3) {
+        printf("Argument salah\n");
+        exit(1);
+      }
+      DIR* dir = opendir(argv[2]);
+      if (dir) {
+        directory = argv[2];
+      } else if (ENOENT == errno) {
+        printf("Directory tidak ada\n");
+        exit(1);
+      }
+      closedir(dir);
+    }
+    ```
+  * Selain hal di atas, digunakan _handler_ untuk argumen ```*``` dan argumen ```-d```
     
 ### Soal 4
 * #### Soal 4A
