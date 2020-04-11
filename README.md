@@ -64,6 +64,20 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     }
     ```
     Nama direktori baru tersebut sesuai dengan nama yang tersimpan dalam ```buffer```.
+  * Lalu, program akan melakukan pengecekan terhadap eksistensi dan bentuk file sesuai dengan argumen yang diinputkan oleh _user_
+    ```bash
+    if (access(buffFrom, F_OK) == -1) {
+      printf("File %s tidak ada\n", buffFrom);
+      pthread_exit(0);
+    }
+    DIR* dir = opendir(buffFrom);
+    if (dir) {
+      printf("file %s berupa folder\n", buffFrom);
+      pthread_exit(0);
+    }
+    closedir(dir);
+    ```
+    
 ### Soal 4
 * #### Soal 4A
   Buatlah program C yang berisi program untuk melakukan perkalian dua buah matriks dengan ketentuan berikut ini : <br>
