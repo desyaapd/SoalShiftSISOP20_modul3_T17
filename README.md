@@ -134,7 +134,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       closedir(dir);
     }
     ```
-  * Selain hal di atas, digunakan _handler_ untuk argumen ```*``` dan argumen ```-d```
+    Selain hal di atas, digunakan _handler_ untuk argumen ```*``` dan argumen ```-d```. ```opendir( )``` akan membuka setiap direktori dan kemudian dimasukkan ke dalam variabel ```dir``` agar nantinya dapat dilakukan pengecekan.
     
 ### Soal 4
 * #### Soal 4A
