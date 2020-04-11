@@ -165,7 +165,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     }
     ```
 #### Output :
-   * ![modul3-soal3](https://user-images.githubusercontent.com/49342639/79041530-ce476200-7c1a-11ea-9cdb-3b492434e797.jpg)
+  ![modul3-soal3](https://user-images.githubusercontent.com/49342639/79041530-ce476200-7c1a-11ea-9cdb-3b492434e797.jpg)
     
 ### Soal 4
 * #### Soal 4A
@@ -236,6 +236,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       }
     printf("\n");
     }
+    ```
   * Membuat Shared Memory ID sesuai dengan key yang telah ditentukan ```key_t key = 1337;``` yakni ```1337```.
   * _Code_ berikut akan membuat Shared Memory ```shmid``` dengan _size_ dari matriks C ```sizeof(matC)``` dengan ```key``` _private key_ (kunci pribadi) dan pada Shared Memory ini mengizinkan adanya ```0666``` _read and write_. 
     ```bash
@@ -247,7 +248,89 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     ```
   #### Output :
   ![modul3-4a](https://user-images.githubusercontent.com/49342639/79041683-d2c04a80-7c1b-11ea-866c-bd3a02a030be.jpg)
+  
+* #### Soal 4B
+  #### Code :
+  #### Penyelesaian :
+  * Untuk mendukung jalannya program ini, pasti kita menggunaka _Library_ berikut ini :
+    ```bash
+    #include <stdio.h>
+    #include <pthread.h>
+    #include <sys/ipc.h>
+    #include <sys/shm.h>
+    #include <stdlib.h>
+    #include <unistd.h>
+    #include <string.h>
+    ```
+  * Kemudian, karena pada program __soal 4b__ ini berhubungan dengan program pada __soal 4a__ karena pada program __soal 4b__ ini akan mengambil matriks hasil perkalian yang telah kita dapatkan dari program pada __soal 4a__ di atas. Oleh karena itu, kita inisialisasikan terlebih dahulu sebuah matriks yang merupakan matriks hasil perkalian dari program __soal 4a__ dengan ```int matrix[4][5];``` dan sebuah matriks lagi yang akan menampilkan hasil faktorialnya ```long hasil[4][5];```.
+    ```bash
+    int matrix[4][5];
+    long hasil[4][5];
+    ```
+ * Setelah inisialisasi matriks selesai, kita berikan struct yang berguna untuk _passing_ data ke dalam thread
+    ```bash
+    struct args {
+      int i;
+      int j;
+    };
+    ```
+ * Struct yang telah kita buat di atas akan kita passing ke dalam ```void *``` dan kemudian akan dilanjutkan untuk dimasukkan ke dalam fungsi untuk mencari hasil faktorialnya.
+    ```bash
+    void *factorial(void* arg) {
+      int i = ((struct args*)arg)->i;
+      int j = ((struct args*)arg)->j;
+      long hasilEl = 1;
+      for (int n = 1; n <= matrix[i][j]; n++) hasilEl += (long)n;
+      hasil[i][j] = hasilEl;
+    }
+    ```
+  * Membuat Shared Memory ID sesuai dengan key yang telah ditentukan ```key_t key = 1337;``` yakni ```1337```.
+  * _Code_ berikut akan membuat Shared Memory ```shmid``` dengan _size_ dari matriks C ```sizeof(matC)``` dengan ```key``` _private key_ (kunci pribadi) dan pada Shared Memory ini mengizinkan adanya ```0666``` _read and write_. 
+    ```bash
+    int shmid = shmget(key, 80, IPC_CREAT | 0666);
+    ```
+  * Shared Memory berhasil dialokasikan, tetapi belum menjadi bagian dari _Address Space_. Oleh karena itu, kita gunakan ```shmat``` untuk menjadikan Shared Memory tersebut bagian dari _Address Space_. 
+    ```bash
+    value = shmat(shmid, NULL, 0);
+    ```
+  * Dalam fungsi ```main``` terdapat ``` pthread_t tid[4][5];``` yang menunjukkan array dari thread bernama __tid__ yakni dengan _size_ __4 x 5__.
+  * Banyak fungsi yang terdapat dalam ```main```, untuk _code_ berikut ini :
+    ```bash
+    for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 5; j++) {
+      struct args *index = (struct args *)malloc(sizeof(struct args));
+      index->i = i;
+      index->j = j;
+      pthread_create(&tid[i][j], NULL, &factorial, (void *)index);
+    }
+  }
+    ```
+   Pada ```struct args *index = (struct args *)malloc(sizeof(struct args));```ini akan membuat _object_ dari ```struct args``` bernama __index__ dan sekaligus melakukan pengalokasian memori sebesar _size_ dari ```struct args```. <br>
+    Setelah pengalokasian memori, ```index->i = i;``` akan mengatur nilai i pada _object_ dari ```struct args``` bernama __index__ dengan __nilai i__. Hal ini juga dilakukan pada nilai j, ``` index->j = j;``` yang akan mengatur nilai j pada _object_ dari ```struct args``` bernama __index__ dengan __nilai j__. <br>
+    Kemudian, ```pthread_create(&tid[i][j], NULL, &factorial, (void *)index);``` membuat thread pada array dari thread bernama __tid__ pada __nilai i__ dan __nilai j__ dengan memanggil fungsi __factorial__ dengan parameter __index__. <br>  
+ * Dilanjutkan dengan menggabungkan semua thread yang ada 
+    ```bash
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 5; j++) {
+        pthread_join(tid[i][j], NULL);
+      }
+    }
+    ```
+  * Hasil factorial dari matriks hasil perkalian pada program __soal 4a__ akan ditampilkan pada layar
+    ```bash
+    printf("Matriks :\n");
+      for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+          printf("%20ld", hasil[i][j]);
+        }
+        printf("\n");
+      }
 
+    }
+    ```
+  #### Output : 
+  ![modul3-4b](https://user-images.githubusercontent.com/49342639/79042140-66dfe100-7c1f-11ea-8fbe-f9f2145c0851.jpg)
+  
 * #### Soal 4c
   Buatlah program C yang akan mengetahui jumlah file yang berada pada suatu folder di direktori saat kita menjalankan program ini dengan menggunakan ```ls | wc -1``` dimana program ini tidak berhubungan dengan program yang diminta pada soal 4A dan 4B di atas. Program ini memiliki satu ketentuan yakni : <br>
   A. Harus menggunakan __IPC Pipes__
