@@ -134,7 +134,22 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       closedir(dir);
     }
     ```
-    Selain hal di atas, digunakan _handler_ untuk argumen ```*``` dan argumen ```-d```. ```opendir( )``` akan membuka setiap direktori dan kemudian dimasukkan ke dalam variabel ```dir``` agar nantinya dapat dilakukan pengecekan.
+    Selain hal di atas, digunakan _handler_ untuk argumen ```*``` dan argumen ```-d```. ```opendir( )``` akan membuka setiap direktori dan kemudian dimasukkan ke dalam variabel ```dir``` agar nantinya dapat dilakukan pengecekan. 
+  * Perlu diketahui bahwa untuk menyimpan _absolute path_ dan variabel iterasi, kita telah membuat ```buffer```. Nilai ```tid``` telah diatur sejumlah nilai pada ```counter``` per direktori untuk thread yang dibuat.
+    ```bash
+    pthread_t tid[file_count];
+    char buff[file_count][1337];
+    int iter = 0;
+
+    dir = opendir(directory);
+    while ((entry = readdir(dir)) != NULL) {
+      if (entry->d_type == DT_REG) {
+        sprintf(buff[iter], "%s/%s", directory, entry->d_name);
+        iter++;
+      }
+    }
+    closedir(dir);
+    ```
     
 ### Soal 4
 * #### Soal 4A
