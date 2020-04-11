@@ -150,12 +150,18 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     }
     closedir(dir);
     ```
-  * Akan terus terjadi proses _Looping_ sejumlah file yang telah tersimpan di dalam ```buffer```. Perlu diingat bahwa sebelum menjalankan program ini pada thread, kita harus melakukan penyimpanan _absolute path_ dari setiap file.
+  * Akan terus terjadi proses _Looping_ sejumlah file yang telah tersimpan di dalam ```buffer```. Perlu diingat bahwa sebelum menjalankan program ini pada thread, kita harus melakukan penyimpanan _absolute path_ dari setiap file. Dan pada code berikut ini juga terdapat code untuk membuat thread yakni ```pthread_create(&tid[i], NULL, &routine, (void *)test);```
     ```bash 
     for (int i = 0; i < file_count; i++) {
       char  *test = (char*)buff[i];
       printf("%s\n", test);
       pthread_create(&tid[i], NULL, &routine, (void *)test);
+    }
+    ```
+  * Pada akhir code terdapat pula proses _Looping_ yang akan melakukan proses _join_ untuk setiap thread yang telah dibuat.
+    ```bash
+    for (int i = 0; i < file_count; i++) {
+      pthread_join(tid[i], NULL);
     }
     ```
     
