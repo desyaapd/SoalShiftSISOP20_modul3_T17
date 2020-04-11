@@ -165,7 +165,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     }
     ```
 #### Output :
-   ![modul3-soal3](https://user-images.githubusercontent.com/49342639/79041530-ce476200-7c1a-11ea-9cdb-3b492434e797.jpg)
+   * ![modul3-soal3](https://user-images.githubusercontent.com/49342639/79041530-ce476200-7c1a-11ea-9cdb-3b492434e797.jpg)
     
 ### Soal 4
 * #### Soal 4A
@@ -245,6 +245,9 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
     ```bash
     value = shmat(shmid, NULL, 0);
     ```
+  #### Output :
+  ![modul3-4a](https://user-images.githubusercontent.com/49342639/79041683-d2c04a80-7c1b-11ea-866c-bd3a02a030be.jpg)
+
 * #### Soal 4c
   Buatlah program C yang akan mengetahui jumlah file yang berada pada suatu folder di direktori saat kita menjalankan program ini dengan menggunakan ```ls | wc -1``` dimana program ini tidak berhubungan dengan program yang diminta pada soal 4A dan 4B di atas. Program ini memiliki satu ketentuan yakni : <br>
   A. Harus menggunakan __IPC Pipes__
@@ -285,5 +288,6 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
       ```
       Fungsi ```dup2( )``` berfungsi untuk melakukan penduplikasian _file descriptor_ yang terbuka ke _desciptor_ yang lain. Sehingga pada command ```dup2(fd[1], 1);``` berfungsi untuk melakukan duplikasi output / _copy_ output. Tidak lupa juga untuk menutup kedua _file descriptor_ yaitu pada _read(0)_ ```close(fd[0]);``` dan _write(1)_ ```close(fd[1]);```. Untuk menampilkan hasil yang telah dibaca pada direktori tersebut digunakan ```execv("/bin/ls", argv);```.<br>
       Kemudian, input pada 0 diganti dengan iput dari pipes ```dup2(fd[0], 0);```. Dan tidak lupa juga untuk menutup kedua _file descriptor_ yaitu pada _read(0)_ ```close(fd[0]);``` dan _write(1)_```close(fd[1]);```. Selanjutnya, melakukan fungsi ```execv("/usr/bin/wc", argv);```.
-#### Output :  ![modul3-4c](https://user-images.githubusercontent.com/49342639/79041605-4a41aa00-7c1b-11ea-9403-6f5fc56483c2.jpg)
+  #### Output :  
+  ![modul3-4c](https://user-images.githubusercontent.com/49342639/79041605-4a41aa00-7c1b-11ea-9403-6f5fc56483c2.jpg)
      
