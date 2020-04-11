@@ -53,7 +53,17 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
 
      return buff;
      ```  
-
+  * Kemudian, dilakukan pembuatan direktori baru dengan fungsi ```mkdir( )``` yang berada didalam fungsi ```void dirChecking``` di bawah ini :
+    ```bash
+    void dirChecking(char buff[]) {
+      DIR *dr = opendir(buff);
+      if (ENOENT == errno) {
+        mkdir(buff, 0775);
+        closedir(dr);
+      }
+    }
+    ```
+    Nama direktori baru tersebut sesuai dengan nama yang tersimpan dalam ```buffer```.
 ### Soal 4
 * #### Soal 4A
   Buatlah program C yang berisi program untuk melakukan perkalian dua buah matriks dengan ketentuan berikut ini : <br>
