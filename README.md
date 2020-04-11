@@ -173,7 +173,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
   A. Matriks pertama berordo __4 x 2__ <br>
   B. Matriks kedua berordo __2 x 5__ <br>
   C. Kedua matriks tersebut berisi angka 1 - 20 <br>
-  #### Code : 
+  #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/FIX-soal4/4a.c
   #### Penyelesaian :
   * Untuk membantu jalannya program ini, maka digunakan beberapa _Library_ berikut ini :
     ```bash
@@ -250,7 +250,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
   ![modul3-4a](https://user-images.githubusercontent.com/49342639/79041683-d2c04a80-7c1b-11ea-866c-bd3a02a030be.jpg)
   
 * #### Soal 4B
-  #### Code :
+  #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/FIX-soal4/4b.c
   #### Penyelesaian :
   * Untuk mendukung jalannya program ini, pasti kita menggunaka _Library_ berikut ini :
     ```bash
@@ -334,7 +334,7 @@ Buatlah program C yang berjalan untuk mengategorikan file dengan memindahkan fil
 * #### Soal 4c
   Buatlah program C yang akan mengetahui jumlah file yang berada pada suatu folder di direktori saat kita menjalankan program ini dengan menggunakan ```ls | wc -1``` dimana program ini tidak berhubungan dengan program yang diminta pada soal 4A dan 4B di atas. Program ini memiliki satu ketentuan yakni : <br>
   A. Harus menggunakan __IPC Pipes__
-  #### Code :
+  #### Code : https://github.com/rindikar/SoalShiftSISOP20_modul3_T17/blob/master/FIX-soal4/4c.c
   #### Penyelesaian :
   * Untuk mendukung jalannya program ini, kita tidak lupa untuk menggunakan _Library_ di antaranya sebagai berikut :
     ```bash
